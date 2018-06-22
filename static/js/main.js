@@ -34,10 +34,11 @@ function addUser(e){
         .then((res) => res.json())
         .then((data) => {
             if (data.response != undefined){
+                document.getElementById('output').style.color = 'red'
                 document.getElementById('output').innerHTML = data.response
             }
-            if (data.successful && data.successful === true){
-                window.location = data.redirect_url
+            if (data.response === "user created successfully"){
+                window.location.href = 'signIn.html'
             }
         })
 
@@ -66,11 +67,14 @@ if (signin){
         .then((res) => res.json())
         .then((data) => {
             if (data.response != undefined){
-                console.log(data)
+                document.getElementById('output').style.color = 'red'
                 document.getElementById('output').innerHTML = data.response
             }
             // store the token created when user is logged in
             window.localStorage.setItem('token', data.token);
+            if (data.response === "login successful") {
+                window.location.href = 'createRequest.html'
+            }
         })
 
     }
