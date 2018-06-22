@@ -21,12 +21,13 @@
         </div>      
         <div class="sign-up">
             <h3>Create Request</h3>
-            <form action="#" class="sign-upform">
-                <input type="text" placeholder="Title" required>
+            <p id="output"></p>
+            <form id="create_request" action="#" class="sign-upform">
+                <input id="title" type="text" placeholder="Title" required>
                 <br/><br/>
-                <textarea type="text" placeholder="Description" required></textarea>
+                <textarea id="description" type="text" placeholder="Description" required></textarea>
                 <br/><br/>
-                <select class="type-select" name="type">
+                <select id="request_type" class="type-select" name="type">
                     <option value="choose-type" value="null">Select One Option</option>
                     <option  class="others" value="repair">Repair</option>
                     <option  class="others" value="maintenance">Maintenance</option>
@@ -40,4 +41,5 @@
         </div>  
     </div>
 </body>
+    <script src="static/js/UserCreateRequest.js"></script>
 </html>
