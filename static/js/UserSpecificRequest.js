@@ -57,7 +57,7 @@ function editrequest(e) {
                 document.getElementById('output').style.color = 'red'
                 document.getElementById('output').innerHTML = data.response
 
-            if(data.response === "request created successfully"){
+            if(data.response === "request modified successfuly"){
                 document.getElementById('output').style.color = 'green'
                 document.getElementById('output').innerHTML = data.response
                 document.getElementById("create_request").reset();

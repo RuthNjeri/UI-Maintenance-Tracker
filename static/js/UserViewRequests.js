@@ -1,6 +1,5 @@
 // user view requests
 
-
 	fetch('https://young-depths-42728.herokuapp.com/api/v2/users/requests',{
 		method: 'GET',
 		headers: {
@@ -12,20 +11,21 @@
 
 	.then((res) => res.json())
 	.then((data) =>{ 
-		for (let i = 0; i < data.requests.length; i++){
+		let table = document.getElementById('table');
+		let i
 
-			let table = document.getElementById('table');
-
+		for( i = 0; i < data.requests.length; i++){
 			// create a table row
-			let new_row = table.insertRow(table.length);
-			let response_length = Object.keys(data.requests[i]).length;
 
-			for(let j = 0; j<response_length; j++){
+			let new_row = table.insertRow();
+			let response_length = Object.keys(data.requests[i]).length;
+			let data_array = Object.values(data.requests[i])
+
+			for(let j = 0; j < response_length; j++){
 				// create a table cell
 				let cell = new_row.insertCell(j);
 
 				//add value to cell
-				data_array = Object.values(data.requests[i])
 				cell.innerHTML = data_array[j];
 			}
 		}

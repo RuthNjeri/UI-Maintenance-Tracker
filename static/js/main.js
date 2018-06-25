@@ -38,6 +38,8 @@ function addUser(e){
                 document.getElementById('output').innerHTML = data.response
             }
             if (data.response === "user created successfully"){
+                document.getElementById('output').style.color = 'green'
+                document.getElementById('output').innerHTML = data.response
                 window.location.href = 'signIn.html'
             }
         })
