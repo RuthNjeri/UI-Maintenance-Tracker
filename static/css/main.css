@@ -110,6 +110,8 @@ position: fixed;
     padding: 12px 20px;
     margin: 8px 0;
     font-size: 100%;
+    font-family:'Montserrat';
+
     
 }
 
@@ -121,21 +123,36 @@ position: fixed;
 }
 
 .sign-up input[type=submit] {
-    width: 300px;
+    width: 343px;
     padding: 12px 20px;
     margin: 8px 0;
-    background-color:#0074B6;;
+    background-color:#0074B6;
     color: white;
     cursor: pointer;
+    font-family:'Montserrat';
     font-size: 100%;
+}
+
+#delete {
+    width: 343px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    color: white;
+    cursor: pointer;
+    font-family:'Montserrat';
+    font-size: 100%;
+    background-color:#dd0007;
+
 }
 
 .sign-up textarea {
     width: 300px;
     padding: 12px 20px;
     margin: 8px 0;
-    font-size: 180%;
-    height: 100px;
+    font-size: 100%;
+    height: 50px;
+    font-family:'Montserrat';
+
 
 }
 
@@ -157,6 +174,10 @@ input[type=submit]:hover {
 .sign-up p {
     margin-left: 80px;
 
+}
+
+.sign-up select {
+    width: 342px;
 }
 
 #forgot-pw-link {
@@ -189,6 +210,11 @@ tr:nth-child(even) {
     background-color: #ffff;  
 }
 
+td:hover {
+  color: blue;
+  text-decoration: underline
+}
+
 .user-request-table input[type=text] { 
     float: right;
     font-size: 17px;   
@@ -211,6 +237,7 @@ tr:nth-child(even) {
 .feedback {
     margin-bottom: 100px;
 }
+
 
 
 @media screen and (max-width:959px) {
