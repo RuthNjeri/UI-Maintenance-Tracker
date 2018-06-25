@@ -134,7 +134,14 @@ position: fixed;
 }
 
 #delete {
-    background-color:red;
+    width: 343px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    color: white;
+    cursor: pointer;
+    font-family:'Montserrat';
+    font-size: 100%;
+    background-color:#dd0007;
 
 }
 
