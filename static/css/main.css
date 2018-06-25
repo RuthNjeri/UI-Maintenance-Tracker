@@ -189,6 +189,11 @@ tr:nth-child(even) {
     background-color: #ffff;  
 }
 
+td:hover {
+  color: blue;
+  text-decoration: underline
+}
+
 .user-request-table input[type=text] { 
     float: right;
     font-size: 17px;   

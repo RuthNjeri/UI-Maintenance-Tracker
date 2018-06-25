@@ -1,10 +1,31 @@
-let post_request = document.getElementById('create_request')
-post_request.addEventListener('submit', createrequest);
+// user view specific request
+let request_id = window.localStorage.getItem('request_id')
+
+
+	fetch('https://young-depths-42728.herokuapp.com/api/v2/users/requests/'+ request_id,{
+		method: 'GET',
+		headers: {
+			'Accept': 'application/json, text/plain, */*',
+            'Content-type': 'application/json',
+            'token': window.localStorage.getItem('token')
+		},
+	})
+
+	.then((res) => res.json())
+	.then((data) =>{ 
+		document.getElementById('title').value = data.request.title
+		document.getElementById('description').value = data.request.description
+		document.getElementById('request_type').value = data.request.type
+	})
+
+// user edit specific request
+let put_request = document.getElementById('edit_request')
+put_request.addEventListener('submit', editrequest);
 
 
 // user can create requests
 
-function createrequest(e) {
+function editrequest(e) {
 
     e.preventDefault();
 
@@ -12,9 +33,11 @@ function createrequest(e) {
     let description = document.getElementById('description').value;
     let request_type = document.getElementById('request_type').value;
     let token = window.localStorage.getItem('token');
+    let request_id = window.localStorage.getItem('request_id');
 
-    fetch('https://young-depths-42728.herokuapp.com/api/v2/users/requests', {
-            method: 'POST',
+
+    fetch('https://young-depths-42728.herokuapp.com/api/v2/users/requests/'+ request_id, {
+            method: 'PUT',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
                 'Content-type': 'application/json',
@@ -29,6 +52,7 @@ function createrequest(e) {
 
         .then((res) => res.json())
         .then((data) => {
+        	console.log(data)
             if (data.response != undefined) {
                 document.getElementById('output').style.color = 'red'
                 document.getElementById('output').innerHTML = data.response

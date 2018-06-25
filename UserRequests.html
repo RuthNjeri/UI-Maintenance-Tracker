@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="static/css/main.css" />
     <script src="static/js/main.js"></script>
+    <script src="static/js/UserViewRequests.js"></script>
+
 </head>    
 <body>
     <div id="container">
@@ -28,38 +30,15 @@
         </div> 
         <div class="user-request-table">  
             <h3>All Requests</h3>
-            <table>
+            <table id="table">
                 <tr>
-                    <th>ID</th>
-                    <th>Title</th>
+                    <th>Date Created</th>
                     <th>Description</th>
-                    <th>Date</th>
-                    <th>Status</th>
                     <th>Feedback</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Computer won't start</td>
-                    <td>When I power up my computer I hear 3 beeps then it shuts down</td>
-                    <td>12/02/94</td>
-                    <td>Resolved</td>
-                    <td>Please bring it to the technicians in 8th floor</td>
-                </tr>
-                <tr>
-                        <td>2</td>
-                        <td>Data Centre Routine Check Up</td>
-                        <td>Request access to visit the data center for the end of year audit</td>
-                        <td>9/02/94</td>
-                        <td>Approved</td>
-                        <td>Data centre has been given your ID to allow access</td>
-                </tr>
-                <tr>
-                        <td>3</td>
-                        <td>Upgrade system</td>
-                        <td>Request to update the payroll system</td>
-                        <td>20/01/94</td>
-                        <td>Disapproved</td>
-                        <td>The accountants request that you do it at the begining of next month</td>
+                    <th>Request ID</th>
+                    <th>Status</th>
+                    <th>Title</th>
+                    <th>Type</th>
                 </tr>
             </table>
         </div>
@@ -70,6 +49,7 @@
             <p id="date-footer"></p>
         </div>  
     </div>
-    <script src="static/js/UserCreateRequest.js"></script>
+    <script src="static/js/UserViewRequests.js"></script>
+
 </body>
 </html>
