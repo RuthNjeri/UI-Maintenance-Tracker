@@ -43,8 +43,17 @@
 	})
 // Implement filtering of the requests table
 function searchFunction(){
+
+	// detect when backspace is pressed
+	let input = event.keyCode
+
 	let cells = document.querySelectorAll("#table td");
 	let filter = document.getElementById("userInput");
+
+	// reload page if backspace key is pressed
+	if(event.keyCode == 8){
+			location.reload();
+			}
 
 	for(let i = 0; i < cells.length; i++){
 		// check cells that match what the user has typed
@@ -62,7 +71,6 @@ function searchFunction(){
 			document.getElementById("output").innerHTML = "Found"
 
 			cells[i].style.display = "table-cell";
-
 			break;
 		}
 		 else {
