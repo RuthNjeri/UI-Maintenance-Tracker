@@ -11,6 +11,7 @@
 
 	.then((res) => res.json())
 	.then((data) =>{ 
+
 		let table = document.getElementById('table');
 		let i
 
@@ -39,6 +40,44 @@
 				
 				
 		}
-
-
 	})
+// Implement filtering of the requests table
+function searchFunction(){
+	let cells = document.querySelectorAll("#table td");
+	let filter = document.getElementById("userInput");
+
+	for(let i = 0; i < cells.length; i++){
+		// check cells that match what the user has typed
+
+		if(cells[i].textContent.toLowerCase().indexOf(filter.value.toLowerCase()) === 0){
+			cells.forEach(function(element){
+				element.style.display = "none";
+			});
+			// hide the header once the request has been found
+			let thead = document.getElementById("heading");
+			thead.style.display = "none";
+
+			// display to the user that the request has been found
+			document.getElementById("output").style.color ="green"
+			document.getElementById("output").innerHTML = "Found"
+
+			cells[i].style.display = "table-cell";
+
+			break;
+		}
+		 else {
+			cells.forEach(function(element){
+				if(cells[i] != element){
+					element.style.display = "none";
+					document.getElementById("output").style.display = "block"
+					document.getElementById("output").style.color ="red"
+					document.getElementById("output").innerHTML = "Not Found"
+
+				}
+
+			});
+		}
+	}
+
+
+}

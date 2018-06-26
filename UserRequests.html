@@ -22,22 +22,20 @@
             </div>
         </div> 
         <div class="myDropdown">
-            <input type="text" placeholder="Search.." id="myInput">
-            <a href="#Title">ID</a>
-            <a href="#Description">Title</a>
-            <a href="#ID">Type</a>
+            <input type="text" placeholder="Search.." id="userInput" onkeyup="searchFunction()">
         </div> 
         <div class="user-request-table">  
             <h3>All Requests</h3>
+            <p id="output"></p>
             <table id="table">
-                <tr>
+                <tr id="heading"">
                     <th>Date Created</th>
                     <th>Description</th>
                     <th>Feedback</th>
                     <th>Request ID</th>
+                    <th>Type</th>
                     <th>Status</th>
                     <th>Title</th>
-                    <th>Type</th>
                 </tr>
             </table>
         </div>
