@@ -1,4 +1,4 @@
-
+// footer content
 window.onload = function() {
     //create text for the footer
     var year = new Date().getFullYear();
@@ -8,6 +8,7 @@ window.onload = function() {
 
 // User sign up
 let reg = document.getElementById('addUser')
+
 if (reg){
     reg.addEventListener
     ('submit', addUser);
@@ -47,8 +48,8 @@ function addUser(e){
     }
 
 // User Login
-
 let signin = document.getElementById('login')
+
 if (signin){
     signin.addEventListener
     ('submit', login);
@@ -83,8 +84,6 @@ if (signin){
 
 
 }
-
-
 
 // window.onload bracket
 

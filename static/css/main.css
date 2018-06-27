@@ -24,6 +24,11 @@ font-family:'Montserrat';
     margin-left: 2.5px;
 }
 
+#btn_page {
+    color:blue;
+    text-decoration: underline;
+}
+
 .header {
     overflow: hidden;
     background-color:#0074B6;
