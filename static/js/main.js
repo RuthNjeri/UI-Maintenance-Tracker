@@ -69,7 +69,7 @@ if (signin){
         })
         .then((res) => res.json())
         .then((data) => {
-            if (data.response != undefined){
+            if (data.response != "login successful"){
                 document.getElementById('output').style.color = 'red'
                 document.getElementById('output').innerHTML = data.response
             }
@@ -77,6 +77,10 @@ if (signin){
             window.localStorage.setItem('token', data.token);
             if (data.response === "login successful") {
                 window.location.href = 'createRequest.html'
+            }
+            // if user is an admin, redirect to admin page
+            if (data.role == 1){
+                window.location.href = 'AdminPage.html';
             }
         })
 
