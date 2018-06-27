@@ -36,6 +36,7 @@ fetch('https://young-depths-42728.herokuapp.com/api/v2/users/requests',{
                     cell.innerHTML = data_array[j];
                 }
             }
+
             // get the request id when row is clicked
             for(let i = 0; i < table.rows.length; i++) {
                     table.rows[i].onclick = function (){
@@ -46,7 +47,6 @@ fetch('https://young-depths-42728.herokuapp.com/api/v2/users/requests',{
                     
                     
             }
-
             }
         
     })
@@ -98,23 +98,3 @@ function searchFunction(){
 
 }
 
-    // // table pagination
-    // let data_set = table.rows;
-    // console.log(data_set)
-
-    // let page_size = 10;
-    // let page_number = 0;
-
-    // function pageData(){
-    //  document.getElementById('table').innerHTML = table.rows
-
-    // }
-
-    // function nextPage(){
-    //  page_number++
-    //  pageData()
-    // }
-    // function prevPage(){
-    //  page_number--
-    //  pageData()
-    // }
