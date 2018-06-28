@@ -1,8 +1,6 @@
+// user can create requests
 let post_request = document.getElementById('create_request')
 post_request.addEventListener('submit', createrequest);
-
-
-// user can create requests
 
 function createrequest(e) {
 

@@ -1,4 +1,4 @@
-
+// footer content
 window.onload = function() {
     //create text for the footer
     var year = new Date().getFullYear();
@@ -8,6 +8,7 @@ window.onload = function() {
 
 // User sign up
 let reg = document.getElementById('addUser')
+
 if (reg){
     reg.addEventListener
     ('submit', addUser);
@@ -47,8 +48,8 @@ function addUser(e){
     }
 
 // User Login
-
 let signin = document.getElementById('login')
+
 if (signin){
     signin.addEventListener
     ('submit', login);
@@ -68,7 +69,7 @@ if (signin){
         })
         .then((res) => res.json())
         .then((data) => {
-            if (data.response != undefined){
+            if (data.response != "login successful"){
                 document.getElementById('output').style.color = 'red'
                 document.getElementById('output').innerHTML = data.response
             }
@@ -77,14 +78,16 @@ if (signin){
             if (data.response === "login successful") {
                 window.location.href = 'createRequest.html'
             }
+            // if user is an admin, redirect to admin page
+            if (data.role == 1){
+                window.location.href = 'AdminPage.html';
+            }
         })
 
     }
 
 
 }
-
-
 
 // window.onload bracket
 
