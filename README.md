@@ -2,18 +2,18 @@
 Implements the front-end for the Maintenance Application 
 
 ## Frontend Functionality
-1. User signup and signin pages.
+1. User signup and signin pages.<br>
 
 2. A page where an admin can see all the requests on the application.
 
-3. A page/pages where an admin can do the following:
-   i)  See the details of a request
-   ii) Approve or disapprove a request
-   iv) Resolve a request
+3. A page/pages where an admin can do the following:<br>
+   i)  See the details of a request<br>
+   ii) Approve or disapprove a request<br>
+   iv) Resolve a request<br>
    
-4. A page/pages where user can do the following:
-   i)  See all his/her requests
-   ii) create requests
+4. A page/pages where user can do the following:<br>
+   i)  See all his/her requests<br>
+   ii) create requests<br>
    
 ## ScreenShots
  **Sign Up** <br>
