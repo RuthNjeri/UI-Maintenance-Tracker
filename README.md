@@ -16,20 +16,20 @@ Implements the front-end for the Maintenance Application
    ii) create requests
    
 ## ScreenShots
- **Sign Up**
- https://res.cloudinary.com/dqvk8ugtp/image/upload/v1530189206/SignUp_i0onm4.png
- **Sign In**
- https://res.cloudinary.com/dqvk8ugtp/image/upload/v1530189205/AdminSignIn_vwy8gj.png
- **Create A request**
- https://res.cloudinary.com/dqvk8ugtp/image/upload/v1530189205/CreateRequests_vgpsv5.png
- **View All Requests**
- https://res.cloudinary.com/dqvk8ugtp/image/upload/v1530189205/AllUserRequests_piz7fa.png
- **Search All Requests**
- https://res.cloudinary.com/dqvk8ugtp/image/upload/v1530189205/SearchAllRequests_aqauid.png
- **View A Request and Edit A request**
- https://res.cloudinary.com/dqvk8ugtp/image/upload/v1530189474/EditAndViewSpecificRequest_yusur5.png
- **View A request and Respond To A Request**
-https://res.cloudinary.com/dqvk8ugtp/image/upload/v1530189205/RespondRequests_l8pcus.png
+ **Sign Up** <br>
+ https://res.cloudinary.com/dqvk8ugtp/image/upload/v1530189206/SignUp_i0onm4.png <br>
+ **Sign In** <br>
+ https://res.cloudinary.com/dqvk8ugtp/image/upload/v1530189205/AdminSignIn_vwy8gj.png <br>
+ **Create A request** <br>
+ https://res.cloudinary.com/dqvk8ugtp/image/upload/v1530189205/CreateRequests_vgpsv5.png <br>
+ **View All Requests** <br>
+ https://res.cloudinary.com/dqvk8ugtp/image/upload/v1530189205/AllUserRequests_piz7fa.png <br>
+ **Search All Requests** <br>
+ https://res.cloudinary.com/dqvk8ugtp/image/upload/v1530189205/SearchAllRequests_aqauid.png <br>
+ **View A Request and Edit A request** <br>
+ https://res.cloudinary.com/dqvk8ugtp/image/upload/v1530189474/EditAndViewSpecificRequest_yusur5.png <br>
+ **View A request and Respond To A Request** <br>
+https://res.cloudinary.com/dqvk8ugtp/image/upload/v1530189205/RespondRequests_l8pcus.png <br>
    
 ### How To Test
 Clone the project
