@@ -29,11 +29,14 @@ font-family:'Montserrat';
     text-decoration: underline;
 }
 
+#spacing {
+    height: 500px;
+}
+
 .header {
     overflow: hidden;
     background-color:#0074B6;
     padding: 20px 10px;
-
      
 }
 
@@ -285,8 +288,14 @@ td:hover {
         margin: 0px;
     }
     .footer {
-        height: 10px;
+        display: block;
+        height: 50px;
+        width: 100%
     }
-    
+    .sign-up input[type=submit] {
+        width: 343px;
+        padding: 12px 20px;
+        margin: 8px 0.5px 70px;
+    } 
 
 }
