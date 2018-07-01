@@ -21,24 +21,10 @@
             </div>
         </div>      
         <div class="sign-up">
-            <h3 ><u>Respond To Request</u></h3>
+            <h3 ><u>Upgrade User To Admin</u></h3>
             <p id="output"></p>
-            <form id="respond_request" action="#" class="sign-upform">               
-                <span><b>Title:</b></span>
-                <span id="title"></span>
-                <br/><br/>
-                <span><b>Description:</b></span>
-                <span id="description"></span>
-                <br/><br/>
-                <span><b>Date Created:</b></span>
-                <span id="date"></span>
-                <br/><br/>
-                <select  id="admin_response" class="type-select" name="type">
-                    <option  value="choose-type" value="null">Select A response</option>
-                    <option id="admin_resolve" class="others" value="resolve">Resolve</option>
-                    <option id="admin_approve" class="others" value="approve">Approve</option>
-                    <option id="admin_disapprove" class="others" value="disapprove">Disapprove</option>
-                </select>
+            <form id="upgrade_user" action="#" class="sign-upform">               
+                <input id="email" type="text" placeholder="User Email" required>
                 <br/>
                 <input type="submit" value="Submit">
             </form>
@@ -48,6 +34,6 @@
             <p id="date-footer"></p>
         </div>  
     </div>
-    <script src="../static/js/AdminRespondRequests.js"></script>
+    <script src="../static/js/AdminUpgradeUser.js"></script>
 </body>
 </html>

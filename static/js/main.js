@@ -92,7 +92,8 @@ if (signin){
 // window.onload bracket
 
 }
-
-
-
+// log out onclick event
+function logout(){
+    window.localStorage.clear();
+}
 

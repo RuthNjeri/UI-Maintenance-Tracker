@@ -1,5 +1,5 @@
 let sort;
-fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/',{
+fetch('https://young-depths-42728.herokuapp.com/api/v2/users',{
         method: 'GET',
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -9,7 +9,6 @@ fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/',{
     })
 .then((res) => res.json())
 .then((data) =>{ 
-
         let table = document.getElementById('table');
         let i
 
@@ -27,10 +26,6 @@ fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/',{
                 //add value to cell
                 cell.innerHTML = data_array[j];
             }
-        }
-        // set onclick on each table row
-        for(let i = 0; i < table.rows.length; i++) {
-                table.rows[i].setAttribute("onclick","viewSpecific(this)")
         }
 
         sort = paginate()
@@ -150,11 +145,4 @@ function paginate(){
         return sort
 }
 
-function viewSpecific(e){
-                value= e.cells[2].innerHTML
-                console.log(value)
-                window.localStorage.setItem('request_id', value);
-                window.location.href = 'AdminRespondRequests.html'
-
-}
 
