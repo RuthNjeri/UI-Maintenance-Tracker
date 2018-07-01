@@ -28,15 +28,9 @@ fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/',{
                 cell.innerHTML = data_array[j];
             }
         }
-        // get the request id when row is clicked
+        // set onclick on each table row
         for(let i = 0; i < table.rows.length; i++) {
-                table.rows[i].onclick = function (){
-                value = this.cells[2].innerHTML
-                window.localStorage.setItem('request_id', value);
-                window.location.href = 'AdminRespondRequests.html'
-                }
-                
-                
+                table.rows[i].setAttribute("onclick","viewSpecific(this)")
         }
 
         sort = paginate()
@@ -104,7 +98,6 @@ function paginate(){
         let ii, iii, j =(has_header)?1:0;
         //hold first row if it has TH
         let th =(has_header?table.rows[(0)].outerHTML:"");
-        console.log(th)
         //count number of pages
         let page_count = Math.ceil(row_size / page_rows)
         //if there is one page only...do nothing
@@ -157,5 +150,11 @@ function paginate(){
         return sort
 }
 
+function viewSpecific(e){
+                value= e.cells[2].innerHTML
+                console.log(value)
+                window.localStorage.setItem('request_id', value);
+                window.location.href = 'AdminRespondRequests.html'
 
+}
 
