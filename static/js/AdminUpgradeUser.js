@@ -1,8 +1,8 @@
 // Upgrade user to admin
 let upgrade_user = document.getElementById('upgrade_user');
 upgrade_user.addEventListener('submit', user_admin);
-function user_admin(e) {
 
+function user_admin(e) {
     e.preventDefault();
 
     let email = document.getElementById('email').value;
@@ -23,7 +23,6 @@ function user_admin(e) {
 
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
             if (data.response != undefined) {
                 document.getElementById('output').style.color = 'red'
                 document.getElementById('output').innerHTML = data.response
