@@ -141,6 +141,11 @@ position: fixed;
     font-size: 100%;
 }
 
+.sign-upform button:hover {
+    background-color:#b71c1c !important;
+
+}
+
 #delete {
     width: 343px;
     padding: 12px 20px;
@@ -165,9 +170,8 @@ position: fixed;
 }
 
 input[type=submit]:hover {
-    background-color:rgb(5, 55, 85);;
+    background-color:rgb(5, 55, 85);
 
-    
 }
 
 .sign-up a {

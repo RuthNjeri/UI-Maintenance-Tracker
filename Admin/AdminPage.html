@@ -6,17 +6,17 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="shortcut icon" href="static/img/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="static/css/main.css" />
-    <script src="static/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/main.css" />
+    <script src="../static/js/main.js"></script>
+
 
 </head>    
 <body>
     <div id="container">
         <div class="header">
-        <img id ="header-logo" src="static/img/logo.png" alt="Logo">
+        <img id ="header-logo" src="../static/img/logo.png" alt="Logo">
             <div class="header-right">
-                <a href="createRequest.html">Create Request</a>
-                <a href="signIn.html">Log Out</a>
+                <a href="../User/signIn.html">Log Out</a>
                 <a href="#about">About</a>
                 <a href="#faq">FAQ</a>
             </div>
@@ -32,17 +32,19 @@
                     <th>Date Created</th>
                     <th>Description</th>
                     <th>Request ID</th>
-                    <th>Type</th>
                     <th>Status</th>
                     <th>Title</th>
+                    <th>Type</th>
+                    <th>User ID</th>
                 </tr>
             </table>
         </div>
+        <div id="spacing"></div>
         <div class="footer"> 
             <p id="date-footer"></p>
         </div>  
     </div>
-    <script src="static/js/UserViewRequests.js"></script>
+    <script src="../static/js/AdminViewAllRequests.js"></script>
 
 </body>
 </html>
