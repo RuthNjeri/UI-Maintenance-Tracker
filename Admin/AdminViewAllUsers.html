@@ -4,23 +4,26 @@
     <meta charset="utf-8" />
     <title>Requests</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="shortcut icon" href="static/img/logo.png">
+    <link rel="shortcut icon" href="../static/img/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="static/css/main.css" />
-    <script src="static/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/main.css" />
+    <script src="../static/js/main.js"></script>
 
 
 </head>    
 <body>
     <div id="container">
         <div class="header">
-        <img id ="header-logo" src="static/img/logo.png" alt="Logo">
+        <img id ="header-logo" src="../static/img/logo.png" alt="Logo">
             <div class="header-right">
-                <a href="signIn.html">Log Out</a>
+                <a href="AdminPage.html">View All Requests</a>
+                <a href="AdminUpgradeUser.html">Upgrade User</a>
+                <a  onclick="logout()" href="../User/signIn.html">Log Out</a>
                 <a href="#about">About</a>
                 <a href="#faq">FAQ</a>
             </div>
         </div> 
+        <br>
         <div class="myDropdown">
             <input type="text" placeholder="Search.." id="userInput" onkeyup="searchFunction()">
         </div> 
@@ -29,12 +32,10 @@
             <p id="output"></p>
             <table id="table">
                 <tr id="heading"">
-                    <th>Date Created</th>
-                    <th>Description</th>
-                    <th>Request ID</th>
-                    <th>Status</th>
-                    <th>Title</th>
-                    <th>Type</th>
+                    <th>Email</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Role</th>
                     <th>User ID</th>
                 </tr>
             </table>
@@ -44,7 +45,7 @@
             <p id="date-footer"></p>
         </div>  
     </div>
-    <script src="static/js/AdminViewAllRequests.js"></script>
+    <script src="../static/js/AdminViewAllUsers.js"></script>
 
 </body>
 </html>

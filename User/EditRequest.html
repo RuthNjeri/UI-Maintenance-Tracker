@@ -4,19 +4,23 @@
     <meta charset="utf-8" />
     <title>Edit Request</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="shortcut icon" href="static/img/logo.png">
+    <link rel="shortcut icon" href="../static/img/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="static/css/main.css" />
-    <script src="static/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/main.css" />
+    <script src="../static/js/main.js"></script>
 </head>
 <body>
     <div id="container">
         <div class="header">
-        <img id ="header-logo" src="static/img/logo.png" alt="Logo">
+        <img id ="header-logo" src="../static/img/logo.png" alt="Logo">
             <div class="header-right">
                 <a href="UserRequests.html">View Requests</a>
                 <a href="createRequest.html">Create Request</a>
+<<<<<<< HEAD:EditRequest.html
                 <a href="signIn.html">Log Out</a>
+=======
+                <a onclick="logout()" href="signIn.html">Log Out</a>
+>>>>>>> cbd99cc117ce969db0ac4742aaca1ae5b88b9184:User/EditRequest.html
                 <a href="#about">About</a>
                 <a href="#faq">FAQ</a>
             </div>
@@ -26,9 +30,9 @@
             <p id="output"></p>
             <form id="edit_request" action="#" class="sign-upform">
                 <input id="title" type="text" placeholder="Title" required>
-                <br/><br/>
+                <br/>
                 <textarea id="description" type="text" placeholder="Description" required></textarea>
-                <br/><br/>
+                <br/>
                 <select id="request_type" class="type-select" name="type">
                     <option value="choose-type" value="null">Select One Option</option>
                     <option  class="others" value="repair">Repair</option>
@@ -36,13 +40,14 @@
                 </select>
                 <br/>
                 <input type="submit" name="edit" value="Edit">
-                <button id= "delete" type="button">Delete</button>
+                <button class="button" id= "delete" type="button">Delete</button>
             </form>
+            <br><br>
         </div>
         <div class="footer"> 
             <p id="date-footer"></p>
         </div>  
     </div>
 </body>
-    <script src="static/js/UserSpecificRequest.js"></script>
+    <script src="../static/js/UserSpecificRequest.js"></script>
 </html>

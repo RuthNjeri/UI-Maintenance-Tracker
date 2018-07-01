@@ -80,7 +80,7 @@ if (signin){
             }
             // if user is an admin, redirect to admin page
             if (data.role == 1){
-                window.location.href = 'AdminPage.html';
+                window.location.href = '../Admin/AdminPage.html';
             }
         })
 
@@ -92,7 +92,8 @@ if (signin){
 // window.onload bracket
 
 }
-
-
-
+// log out onclick event
+function logout(){
+    window.localStorage.clear();
+}
 

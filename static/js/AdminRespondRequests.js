@@ -79,7 +79,7 @@ function respondRequest(e) {
             }
         })
 }
-
+// admin resolve request
     if(admin_response == "resolve"){
             fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/'+ request_id +'/resolve', {
             method: 'PUT',
