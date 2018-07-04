@@ -24,7 +24,14 @@
         </div> 
         <br>
         <div class="myDropdown">
-            <input type="text" placeholder="Search.." id="userInput" onkeyup="searchFunction()">
+            <span><input type="text" placeholder="Search.." id="userInput" onkeyup="searchFunction()">
+                <span>Filter Requests By:
+                <a onclick="pending()">Pending</a>
+                <span><a onclick="approved()">Approved</a></span>
+                <span><a onclick="disapproved()">Disapproved</a></span>
+                <span><a onclick="resolved()">Resolved</a></span>
+                </span>
+            </span>
         </div> 
         <div class="user-request-table">  
             <h3>All Requests</h3>

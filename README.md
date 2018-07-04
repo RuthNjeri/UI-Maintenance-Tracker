@@ -15,6 +15,10 @@ Implements the front-end for the Maintenance Application
    i)  See all his/her requests<br>
    ii) create requests<br>
    
+## Hosted on Github
+[Sign Up](https://ruthnjeri.github.io/UI-Maintenance-Tracker/User/signUp.html)<br>
+[Sign In](https://ruthnjeri.github.io/UI-Maintenance-Tracker/User/signIn.html)
+
 ## ScreenShots
  **Sign Up** <br>
  https://res.cloudinary.com/dqvk8ugtp/image/upload/v1530189206/SignUp_i0onm4.png <br>
