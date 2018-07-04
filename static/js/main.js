@@ -8,21 +8,21 @@ window.onload = function() {
 
 // User sign up
 let reg = document.getElementById('addUser')
-
 if (reg){
     reg.addEventListener
     ('submit', addUser);
 }
 
-function addUser(e){
-    e.preventDefault();
 
+function addUser(e){
+    //get user details to sign them up
+    e.preventDefault();
     let email = document.getElementById('email').value;
     let first_name = document.getElementById('first_name').value;
     let last_name = document.getElementById('last_name').value;
     let password = document.getElementById('password').value;
     let confirm_password = document.getElementById('confirm_password').value;
-
+    //sign up user endpoint
     fetch('https://young-depths-42728.herokuapp.com/api/v2/auth/signup', {
         method: 'POST',
         headers: {
@@ -35,30 +35,32 @@ function addUser(e){
         .then((res) => res.json())
         .then((data) => {
             if (data.response != undefined){
+                //response if request is unsuccessful
                 document.getElementById('output').style.color = 'red'
                 document.getElementById('output').innerHTML = data.response
             }
             if (data.response === "user created successfully"){
+                //response if request is successful
                 document.getElementById('output').style.color = 'green'
                 document.getElementById('output').innerHTML = data.response
                 window.location.href = 'signIn.html'
             }
         })
-
     }
+
 
 // User Login
 let signin = document.getElementById('login')
-
 if (signin){
+    //if perform the function if the user clicks the submit button
     signin.addEventListener
     ('submit', login);
     function login(e){
-    e.preventDefault();
 
+    e.preventDefault();
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
-
+    //endpoint to sign in the user
     fetch('https://young-depths-42728.herokuapp.com/api/v2/auth/login', {
         method: 'POST',
         headers: {
@@ -83,17 +85,15 @@ if (signin){
                 window.location.href = '../Admin/AdminPage.html';
             }
         })
-
     }
-
-
-}
-
+  }
 // window.onload bracket
+ }
 
-}
+
 // log out onclick event
 function logout(){
+    //Remove the token once the user logs out 
     window.localStorage.clear();
 }
 
