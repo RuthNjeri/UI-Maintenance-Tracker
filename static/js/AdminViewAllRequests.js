@@ -114,8 +114,8 @@ function paginate(){
             }
             buttons += "<input type='button' value='Next &gt;&gt;' onclick='sort("+(current_page + 1)+")' "+next_disable+">";
             return buttons;
-
         }
+
         return sort
 }
 
@@ -126,7 +126,6 @@ function viewSpecific(e){
                 console.log(value)
                 window.localStorage.setItem('request_id', value);
                 window.location.href = 'AdminRespondRequests.html'
-
 }
 
 
