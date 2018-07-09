@@ -14,7 +14,10 @@ Implements the front-end for the Maintenance Application
 4. A page/pages where user can do the following:<br>
    i)  See all his/her requests<br>
    ii) create requests<br>
-   
+## Hosted on Heroku
+[Sign up](https://maintenancefrontend.herokuapp.com/User/signUp.html)<br>
+[Sign In](https://maintenancefrontend.herokuapp.com/User/signIn.html)
+
 ## Hosted on Github
 [Sign Up](https://ruthnjeri.github.io/UI-Maintenance-Tracker/User/signUp.html)<br>
 [Sign In](https://ruthnjeri.github.io/UI-Maintenance-Tracker/User/signIn.html)
