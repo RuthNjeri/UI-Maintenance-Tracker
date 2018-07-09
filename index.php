@@ -1,1 +1,1 @@
-<?php header('location: UI2/User/signIn.html') ; ?>
+<?php header('location: User/signIn.html') ; ?>
