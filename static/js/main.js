@@ -1,8 +1,9 @@
+import endpoint from './fetch';
 // footer content
 window.onload = function() {
     //create text for the footer
     var year = new Date().getFullYear();
-    text = "Developed by Ruth Waiganjo "+"© " + year + " Nairobi"
+    let text = "Developed by Ruth Waiganjo "+"© " + year + " Nairobi"
     document.getElementById("date-footer").innerHTML = text;
 
 
@@ -17,23 +18,16 @@ if (reg){
 function addUser(e){
     //get user details to sign them up
     e.preventDefault();
-    let email = document.getElementById('email').value;
-    let first_name = document.getElementById('first_name').value;
-    let last_name = document.getElementById('last_name').value;
-    let password = document.getElementById('password').value;
-    let confirm_password = document.getElementById('confirm_password').value;
+    let data = {email:document.getElementById('email').value,
+                first_name:document.getElementById('first_name').value,
+                last_name:document.getElementById('last_name').value,
+                password:document.getElementById('password').value,
+                confirm_password:document.getElementById('confirm_password').value
+                }
     //sign up user endpoint
-    fetch('https://young-depths-42728.herokuapp.com/api/v2/auth/signup', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-type':'application/json'
-        },
-        body:JSON.stringify({email:email, first_name:first_name, last_name:last_name,
-            password:password, confirm_password:confirm_password})
-        })
+        endpoint.post('auth/signup', data)
         .then((res) => res.json())
-        .then((data) => {
+        .then(data => {
             if (data.response != undefined){
                 //response if request is unsuccessful
                 document.getElementById('output').style.color = 'red'

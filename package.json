@@ -1,0 +1,31 @@
+{
+  "name": "ui-maintenance-tracker",
+  "version": "1.0.0",
+  "description": "Implements the front-end for the Maintenance Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --watch & live-server public/",
+    "watch": "webpack --watch",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RuthNjeri/UI-Maintenance-Tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RuthNjeri/UI-Maintenance-Tracker/issues"
+  },
+  "homepage": "https://github.com/RuthNjeri/UI-Maintenance-Tracker#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "live-server": "^1.2.0",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.7"
+  }
+}
