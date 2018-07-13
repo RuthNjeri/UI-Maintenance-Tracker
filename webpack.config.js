@@ -3,12 +3,14 @@ const path = require("path");
 module.exports = {
   mode: "development",
   entry: {
-    main: "./static/js/main.js"
+    main: "./static/js/main.js",
+    createRequest: "./static/js/user/createRequest.js"
   },
   output: {
     path: path.resolve(__dirname, "public/dist"),
     filename: "[name].bundle.js"
   },
+  watch: true,
   module: {
     rules: [
       {
