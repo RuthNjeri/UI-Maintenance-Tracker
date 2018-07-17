@@ -1,21 +1,16 @@
+//static/js/user/specificRequest
+import endpoint from '../fetch'
 // user view specific request
 let request_id = window.localStorage.getItem('request_id')
 
-//endpoint to view specific request
-fetch('https://young-depths-42728.herokuapp.com/api/v2/users/requests/'+ request_id,{
-    method: 'GET',
-    headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-type': 'application/json',
-        'token': window.localStorage.getItem('token')
-    },
-    })
-    .then((res) => res.json())
-    .then((data) =>{ 
-        document.getElementById('title').value = data.request.title
-        document.getElementById('description').value = data.request.description
-        document.getElementById('request_type').value = data.request.type
-    })
+//the fetch endpoint
+endpoint.get('users/requests/'+ request_id, window.localStorage.getItem('token'))
+.then((res) => res.json())
+.then((data) =>{ 
+    document.getElementById('title').value = data.request.title
+    document.getElementById('description').value = data.request.description
+    document.getElementById('request_type').value = data.request.type
+})
 
 // user edit specific request
 let put_request = document.getElementById('edit_request');
@@ -45,7 +40,6 @@ function editrequest(e) {
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
             if (data.response != undefined) {
                 //response if request is not successful
                 document.getElementById('output').style.color = 'red'
@@ -78,7 +72,6 @@ function delete_request(e){
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
             if (data.response != undefined) {
                 //response if request is not successful
                 document.getElementById('output').style.color = 'red'

@@ -26,7 +26,7 @@ function createrequest(e) {
         if(data.response === "request created successfully"){
             document.getElementById('output').style.color = 'green'
             document.getElementById('output').innerHTML = data.response
-            document.getElementById("create_request").reset();
+            window.location.href = '../user/userRequests.html';
         }
     })
 }

@@ -4,7 +4,9 @@ module.exports = {
   mode: "development",
   entry: {
     main: "./static/js/main.js",
-    createRequest: "./static/js/user/createRequest.js"
+    createRequest: "./static/js/user/createRequest.js",
+    viewRequest: "./static/js/user/viewRequests.js",
+    specificRequest: "./static/js/user/specificRequest.js"
   },
   output: {
     path: path.resolve(__dirname, "public/dist"),

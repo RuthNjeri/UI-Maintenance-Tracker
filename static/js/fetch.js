@@ -18,6 +18,16 @@ class Api {
         });
     }
 
+    get(api, token) {
+        return fetch(herokuUrl+api, {
+            method: 'GET',
+            headers: {'Accept': 'application/json, text/plain, */*',
+                      'Content-type':'application/json',
+                      'token': token
+                     }
+        });
+    }
+
 
 
 

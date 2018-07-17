@@ -1,14 +1,10 @@
+//static/js/viewRequests
+import endpoint from '../fetch';
+
 // user view requests on html table
 let sort;
 //view requests endpoint
-fetch('https://young-depths-42728.herokuapp.com/api/v2/users/requests',{
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-type': 'application/json',
-            'token': window.localStorage.getItem('token')
-        }
-    })
+endpoint.get('users/requests', window.localStorage.getItem('token') )
 .then((res) => res.json())
 .then((data) =>{ 
         let table = document.getElementById('table');
@@ -74,9 +70,9 @@ function paginate(){
         let row_size = table.rows.length;
         let header_row = table.rows[0].firstElementChild.tagName;
         //number of rows per page
-        page_rows = 3;
+        let page_rows = 3;
         //check if the table has a table head
-        has_header = (header_row === "TH")
+        let has_header = (header_row === "TH")
         //array holding each row
         let tr = [];
         //start counter at row[1]
@@ -127,15 +123,19 @@ function paginate(){
             buttons += "<input type='button' value='Next &gt;&gt;' onclick='sort("+(current_page + 1)+")' "+next_disable+">";
             return buttons;
         }
-        return sort
+
+        window.sort = sort;
+        
 }
 
 
-function viewSpecific(e){
+function viewSpecific(event){
                 //onclick function to enable user view specific request
-                value= e.cells[2].innerHTML
-                console.log(value)
-                window.localStorage.setItem('request_id', value);
-                window.location.href = 'EditRequest.html'
-}
+                window.localStorage.setItem('request_id',event.cells[2].innerHTML);
+                window.location.href = '../user/editRequest.html'
+    }
+
+window.viewSpecific = viewSpecific;
+
+
 

@@ -4,7 +4,7 @@
   "description": "Implements the front-end for the Maintenance Application",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --watch & live-server public/",
+    "start": "webpack --watch & live-server",
     "watch": "webpack --watch",
     "build": "webpack --config webpack.config.js"
   },
