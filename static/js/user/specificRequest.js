@@ -1,6 +1,6 @@
 //static/js/user/specificRequest
 import endpoint from '../fetch'
-// user view specific request
+// user view one request
 let request_id = window.localStorage.getItem('request_id')
 
 //the fetch endpoint
