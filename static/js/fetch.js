@@ -28,6 +28,27 @@ class Api {
         });
     }
 
+    put(api,data, token) {
+        return fetch(herokuUrl+api, {
+            method: 'PUT',
+            headers: {'Accept': 'application/json, text/plain, */*',
+                      'Content-type':'application/json',
+                      'token': token
+                     },
+            body:JSON.stringify(data),
+        });
+    }
+    delete(api,token) {
+      return fetch(herokuUrl+api, {
+          method: 'DELETE',
+          headers: {'Accept': 'application/json, text/plain, */*',
+                    'Content-type':'application/json',
+                    'token': token
+                   }
+      });
+    }
+
+
 
 
 

@@ -136,6 +136,6 @@ function viewSpecific(event){
     }
 
 window.viewSpecific = viewSpecific;
-
+window.searchFunction = searchFunction;
 
 

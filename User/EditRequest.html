@@ -22,19 +22,24 @@
             </div>
         </div>      
         <div class="sign-up">
-            <h3 >Edit Request</h3>
+            <h3 ><u>Edit Request</u></h3>
             <p id="output"></p>
             <form id="edit_request" action="#" class="sign-upform">
-                <input id="title" type="text" placeholder="Title" required>
+                <span><b>Date:</b></span>
+                <span id="date"></span>
+                <br/><br>
+                <b>Title:</b><br>
+                <input id="title" type="text">
                 <br/>
-                <textarea id="description" type="text" placeholder="Description" required></textarea>
+                <b>Description:</b><br>
+                <textarea id="description" type="text"></textarea>
                 <br/>
+                <b>Type:</b><br>
                 <select id="request_type" class="type-select" name="type">
                     <option value="choose-type" value="null">Select One Option</option>
                     <option  class="others" value="repair">Repair</option>
                     <option  class="others" value="maintenance">Maintenance</option>
                 </select>
-                <br/>
                 <input type="submit" name="edit" value="Edit">
                 <button class="button" id= "delete" type="button">Delete</button>
             </form>
@@ -45,5 +50,5 @@
         </div>  
     </div>
 </body>
-    <script src="../public/dist/main.bundle.js"></script>
+    <script src="../public/dist/SpecificRequest.bundle.js"></script>
 </html>
