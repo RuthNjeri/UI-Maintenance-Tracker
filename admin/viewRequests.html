@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="../static/img/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../static/css/main.css" />
-    <script src="../static/js/main.js"></script>
+    <script src="../public/dist/main.bundle.js"></script>
 
 
 </head>    
@@ -16,25 +16,24 @@
         <div class="header">
         <img id ="header-logo" src="../static/img/logo.png" alt="Logo">
             <div class="header-right">
-                <a href="AdminUpgradeUser.html">Upgrade User</a>
+                <a href="upgradeUser.html">Upgrade User</a>
                 <a onclick="logout()" href="../User/signIn.html">Log Out</a>
                 <a href="#about">About</a>
                 <a href="#faq">FAQ</a>
             </div>
         </div> 
         <br>
-        <div class="myDropdown">
-            <span><input type="text" placeholder="Search.." id="userInput" onkeyup="searchFunction()">
-                <span>Filter Requests By:
-                <a onclick="pending()">Pending</a>
-                <span><a onclick="approved()">Approved</a></span>
-                <span><a onclick="disapproved()">Disapproved</a></span>
-                <span><a onclick="resolved()">Resolved</a></span>
-                </span>
-            </span>
+        <div id="filter" class="myDropdown">
+            <b>Filter Requests By:</b><br>
+            <a onclick="pending()">Pending</a><br> 
+            <a onclick="approved()">Approved</a><br>
+            <a onclick="disapproved()">Disapproved</a><br> 
+            <a onclick="resolved()">Resolved</a><br>
         </div> 
-        <div class="user-request-table">  
-            <h3>All Requests</h3>
+
+        <div class="user-request-table"> 
+            <input class="myDropdown" type="text" placeholder="Search.." id="userInput" onkeyup="searchFunction()"> 
+            <h3><u>All Requests</u></h3>
             <p id="output"></p>
             <table id="table">
                 <tr id="heading"">
@@ -53,7 +52,7 @@
             <p id="date-footer"></p>
         </div>  
     </div>
-    <script src="../static/js/AdminViewAllRequests.js"></script>
+    <script src="../public/dist/viewAllRequests.bundle.js"></script>
 
 </body>
 </html>

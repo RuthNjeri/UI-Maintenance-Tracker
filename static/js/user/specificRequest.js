@@ -30,7 +30,7 @@ function editrequest(event) {
     let request_id = window.localStorage.getItem('request_id');
 
     //pass the data to the endpoint
-    endpoint.put('users/requests/'+ request_id, data, token)
+    endpoint.put('users/requests/'+ request_id, token, data)
     .then((res) => res.json())
     .then((data) => {
         if (data.response != undefined) {

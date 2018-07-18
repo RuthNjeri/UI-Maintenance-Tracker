@@ -6,7 +6,11 @@ module.exports = {
     main: "./static/js/main.js",
     createRequest: "./static/js/user/createRequest.js",
     viewRequest: "./static/js/user/viewRequests.js",
-    specificRequest: "./static/js/user/specificRequest.js"
+    specificRequest: "./static/js/user/specificRequest.js",
+    upgradeUser: "./static/js/admin/upgradeUser.js",
+    viewAllRequests: "./static/js/admin/viewAllRequests.js",
+    respondRequests: "./static/js/admin/respondRequests.js"
+
   },
   output: {
     path: path.resolve(__dirname, "public/dist"),

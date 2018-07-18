@@ -1,20 +1,16 @@
+//static/admin/respondRequests.js
+import endpoint from '../fetch';
 // Admin Respond to specific request
 let request_id = window.localStorage.getItem('request_id')
 //fetch specific request endpoint
-fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/'+ request_id,{
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-type': 'application/json',
-            'token': window.localStorage.getItem('token')
-        },
-    })
-    .then((res) => res.json())
-    .then((data) =>{
-        //display specific request
-        document.getElementById('title').innerHTML = data.request.title
-        document.getElementById('description').innerHTML = data.request.description
-        document.getElementById('date').innerHTML = data.request.date_created
+let token = window.localStorage.getItem('token')
+endpoint.get('requests/'+ request_id, token)
+.then((res) => res.json())
+.then((data) =>{
+    //display specific request
+    document.getElementById('title').innerHTML = data.request.title
+    document.getElementById('description').innerHTML = data.request.description
+    document.getElementById('date').innerHTML = data.request.date_created
     })
 
 
@@ -30,14 +26,8 @@ function respondRequest(e) {
     let request_id = window.localStorage.getItem('request_id');
     // admin approve request
     if(admin_response == "approve"){
-            fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/'+ request_id +'/approve', {
-            method: 'PUT',
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-type': 'application/json',
-                'token': token
-            }
-        })
+
+        endpoint.putResponse('requests/'+request_id +'/approve', token)
         .then((res) => res.json())
         .then((data) => {
             if (data.response != undefined) {
@@ -56,14 +46,8 @@ function respondRequest(e) {
 
     // admin disapprove request
     if(admin_response == "disapprove"){
-            fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/'+ request_id +'/disapprove', {
-            method: 'PUT',
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-type': 'application/json',
-                'token': token
-            }
-        })
+
+        endpoint.putResponse('requests/'+request_id +'/disapprove', token)    
         .then((res) => res.json())
         .then((data) => {
             if (data.response != undefined) {
@@ -82,14 +66,8 @@ function respondRequest(e) {
 
     // admin resolve request
     if(admin_response == "resolve"){
-            fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/'+ request_id +'/resolve', {
-            method: 'PUT',
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-type': 'application/json',
-                'token': token
-            }
-        })
+
+        endpoint.putResponse('requests/'+request_id +'/resolve', token)
         .then((res) => res.json())
         .then((data) => {
             if (data.response != undefined) {

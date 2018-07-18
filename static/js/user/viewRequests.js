@@ -26,7 +26,7 @@ endpoint.get('users/requests', window.localStorage.getItem('token') )
             table.rows[i].setAttribute("onclick","viewSpecific(this)")
         }
         sort = paginate()
-    })
+    }) 
 
 // Implement filtering of the requests table
 function searchFunction(){

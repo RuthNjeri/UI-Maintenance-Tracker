@@ -1,14 +1,11 @@
+//static/js/admin/viewAllRequests
+import endpoint from '../fetch';
+
 let sort; //direct HTML page to the sort function
 
 //fetch all user requests
-fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/',{
-        method: 'GET',
-        headers: {
-                    'Accept': 'application/json, text/plain, */*',
-                    'Content-type': 'application/json',
-                    'token': window.localStorage.getItem('token')
-                 }
-    })
+let token = window.localStorage.getItem('token')
+endpoint.get('requests/', token)
 .then((res) => res.json())
 .then((data) =>{ 
                 //put the requests in a table
@@ -62,9 +59,9 @@ function paginate(){
         let row_size = table.rows.length;
         let header_row = table.rows[0].firstElementChild.tagName;
         //number of rows per page
-        page_rows = 3;
+        let page_rows = 3;
         //check if the table has a table head
-        has_header = (header_row === "TH")
+        let has_header = (header_row === "TH")
         //array holding each row
         let tr = [];
         //start counter at row[1]
@@ -116,34 +113,26 @@ function paginate(){
             return buttons;
         }
 
-        return sort
+        window.sort = sort;
 }
 
 
 function viewSpecific(e){
     //function to view specific row in a table
-                value= e.cells[2].innerHTML
-                console.log(value)
-                window.localStorage.setItem('request_id', value);
-                window.location.href = 'AdminRespondRequests.html'
+                window.localStorage.setItem('request_id', e.cells[2].innerHTML);
+                window.location.href = '../admin/respondRequests.html'
 }
 
 
 function pending(){
 //filter pending requests
-fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/pending',{
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-type': 'application/json',
-            'token': window.localStorage.getItem('token')
-        }
-    })
+let token = window.localStorage.getItem('token')
+endpoint.get('requests/pending', token)
 .then((res) => res.json())
 .then((data) =>{ 
         create_table(data.requests)
         //delete old buttons
-        old_buttons = document.getElementById("buttons")
+        let old_buttons = document.getElementById("buttons")
         old_buttons.remove()
         sort = paginate()
     })
@@ -152,19 +141,13 @@ fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/pending',{
 
 function approved(){
 //filter approved requests
-fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/approved',{
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-type': 'application/json',
-            'token': window.localStorage.getItem('token')
-        }
-    })
+let token = window.localStorage.getItem('token')
+endpoint.get('requests/approved', token)
 .then((res) => res.json())
 .then((data) =>{ 
         create_table(data.requests)
         //delete old buttons
-        old_buttons = document.getElementById("buttons")
+        let old_buttons = document.getElementById("buttons")
         old_buttons.remove()
         sort = paginate()
     })
@@ -173,19 +156,13 @@ fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/approved',{
 
 function disapproved(){
 //filter disapproved requests
-fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/disapproved',{
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-type': 'application/json',
-            'token': window.localStorage.getItem('token')
-        }
-    })
+let token = window.localStorage.getItem('token')
+endpoint.get('requests/disapproved', token)
 .then((res) => res.json())
 .then((data) =>{ 
         create_table(data.requests)
         //delete old buttons
-        old_buttons = document.getElementById("buttons")
+        let old_buttons = document.getElementById("buttons")
         old_buttons.remove()
         sort = paginate()
     })
@@ -194,19 +171,13 @@ fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/disapproved',{
 
 function resolved(){
 //filter resolved requests
-fetch('https://young-depths-42728.herokuapp.com/api/v2/requests/resolved',{
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-type': 'application/json',
-            'token': window.localStorage.getItem('token')
-        }
-    })
+let token = window.localStorage.getItem('token')
+endpoint.get('requests/resolved', token)
 .then((res) => res.json())
 .then((data) =>{ 
         create_table(data.requests)
         //delete old buttons
-        old_buttons = document.getElementById("buttons")
+        let old_buttons = document.getElementById("buttons")
         old_buttons.remove()
         sort = paginate()
     })
@@ -218,7 +189,7 @@ function create_table(data){
         //delete old table
         while(table.rows.length > 1) {
             table.deleteRow(1);
-        };
+        }
         for( let i = 0; i < data.length; i++){
             // create a table row
             let new_row = table.insertRow();
@@ -237,3 +208,10 @@ function create_table(data){
                 table.rows[i].setAttribute("onclick","viewSpecific(this)")
         }
 }
+
+window.approved = approved;
+window.pending = pending;
+window.disapproved = disapproved;
+window.resolved = resolved
+window.viewSpecific = viewSpecific;
+window.searchFunction = searchFunction;

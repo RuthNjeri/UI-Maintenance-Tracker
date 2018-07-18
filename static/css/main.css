@@ -58,7 +58,7 @@ body {
 }
 
 .myDropdown{
-    margin-right: 850px;
+    margin-right: 930px;
 
 }
 
@@ -235,6 +235,10 @@ td:hover {
 
 #userInput {
     border-radius: 10px; 
+}
+
+#filter {
+    margin-left: 30px;
 }
 
 @media screen and (max-width:959px) {

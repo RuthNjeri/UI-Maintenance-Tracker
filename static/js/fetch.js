@@ -28,7 +28,7 @@ class Api {
         });
     }
 
-    put(api,data, token) {
+    put(api, token, data) {
         return fetch(herokuUrl+api, {
             method: 'PUT',
             headers: {'Accept': 'application/json, text/plain, */*',
@@ -36,6 +36,15 @@ class Api {
                       'token': token
                      },
             body:JSON.stringify(data),
+        });
+    }
+    putResponse(api, token) {
+        return fetch(herokuUrl+api, {
+            method: 'PUT',
+            headers: {'Accept': 'application/json, text/plain, */*',
+                      'Content-type':'application/json',
+                      'token': token
+                     }
         });
     }
     delete(api,token) {
