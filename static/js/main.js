@@ -55,10 +55,10 @@ if (signin){
 function login(event){
     //function to login user through endpoint
     event.preventDefault();
+    document.getElementById('sign-in').value = 'Sign Me In.....'
     let data ={ email:document.getElementById('email').value,
                 password:document.getElementById('password').value
               }
-
     //endpoint to sign in the user
     endpoint.post('auth/login', data)
     .then((res) => res.json())
