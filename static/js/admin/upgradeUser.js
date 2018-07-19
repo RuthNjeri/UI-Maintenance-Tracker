@@ -12,7 +12,7 @@ function user_admin(e){
     let email = {email: document.getElementById('email').value}
     let token = window.localStorage.getItem('token');
     //fetch endpoint to upgrade user
-    endpoint.put('auth/admin',email, token)
+    endpoint.put('auth/admin',token, email)
     .then((res) => res.json())
     .then((data) => {
         if (data.response != undefined) {
