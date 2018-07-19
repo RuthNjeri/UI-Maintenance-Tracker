@@ -90,6 +90,7 @@ function logout(){
 // window.onload bracket
  }
 
+window.logout = logout;
 
 
 
